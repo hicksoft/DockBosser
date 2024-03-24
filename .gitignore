@@ -130,5 +130,6 @@ dist
 .pnp.*
 
 # prisma
-backend/prisma/*
-!backend/prisma/schema.prisma
+backend/prisma/migrations/
+backend/prisma/dev.db
+backend/prisma/dev.db-journal

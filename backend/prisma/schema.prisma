@@ -14,3 +14,10 @@ model Setting {
   name  String  @unique
   value String
 }
+
+model Host {
+  name String @unique
+  host String
+  protocol String?
+  port Int?
+}
