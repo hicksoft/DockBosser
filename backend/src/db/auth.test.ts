@@ -1,5 +1,5 @@
 /*
- * @group db
+ * @group integration/db
  */
 
 import { reset } from '../../test/db'
