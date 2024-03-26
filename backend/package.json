@@ -7,7 +7,9 @@
     "build:clean": "rimraf build",
     "build:transpile": "npx tsc -p tsconfig.build.json",
     "test": "npx jest",
-    "test:db": "npx jest --group=db"
+    "test:int": "npx jest --group=integration",
+    "test:int:db": "npx jest --group=integration/db",
+    "test:int:docker": "npx jest --group=integration/docker"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
