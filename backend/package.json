@@ -6,9 +6,8 @@
     "build": "npm run build:clean && npm run build:transpile",
     "build:clean": "rimraf build",
     "build:transpile": "npx tsc -p tsconfig.build.json",
-    "test:all": "npx jest",
-    "test": "npx jest --group=unit",
-    "test:integration": "npx jest --group=integration"
+    "test": "npx jest",
+    "test:db": "npx jest --group=db"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

@@ -11,12 +11,13 @@ datasource db {
 }
 
 model Setting {
-  name  String  @unique
+  name  String      @unique
   value String
 }
 
 model Host {
-  name String @unique
+  id Int            @id @default(autoincrement())
+  name String       @unique
   host String
   protocol String?
   port Int?
