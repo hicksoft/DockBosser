@@ -13,37 +13,33 @@ describe('Host functions', () => {
 
     expect(hosts.length).toBe(1)
     expect(hosts[0].name).toBe('Local Docker Host')
-    expect(hosts[0].host).toBe('/var/run/docker.sock')
+    expect(hosts[0].path).toBe('/var/run/docker.sock')
   })
 
   it('Create host', async () => {
     const name = 'host name 1'
-    const host = 'somesite.com'
-    const protocol = 'http'
-    const port = 3000
+    const path = 'some/path/here'
 
-    const result = await addHost(name, host, protocol, port)
+    const result = await addHost(name, path)
 
-    expect(result).toEqual({ id: result.id, name, host, protocol, port })
-    await expect(getHost(result.id)).resolves.toEqual({ id: result.id, name, host, protocol, port })
+    expect(result).toEqual({ id: result.id, name, path })
+    await expect(getHost(result.id)).resolves.toEqual({ id: result.id, name, path })
   })
 
   it('Update host', async () => {
-    const result_pre = await addHost('1', '1', '1', 1)
+    const result_pre = await addHost('1', '1')
 
     const name = 'host name 2'
-    const host = 'somesite.com'
-    const protocol = 'http'
-    const port = 3000
+    const path = 'some/path/here'
 
-    const result_post = await updateHost(result_pre.id, name, host, protocol, port)
+    const result_post = await updateHost(result_pre.id, name, path)
 
-    await expect(result_post).toEqual({ id: result_pre.id, name, host, protocol, port })
-    await expect(getHost(result_pre.id)).resolves.toEqual({ id: result_pre.id, name, host, protocol, port })
+    await expect(result_post).toEqual({ id: result_pre.id, name, path })
+    await expect(getHost(result_pre.id)).resolves.toEqual({ id: result_pre.id, name, path })
   })
 
   it('Remove host', async () => {
-    const result = await addHost('2', '2', '2', 2)
+    const result = await addHost('2', '2')
 
     await expect(getHost(result.id)).resolves.toBeDefined()
 

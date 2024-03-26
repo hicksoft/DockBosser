@@ -10,31 +10,21 @@ export function getHost(id: number) {
   })
 }
 
-export function addHost(name: string, host: string, protocol: string, port: number) {
+export function addHost(name: string, path: string) {
   return prisma.host.create({
     data: {
       name,
-      host,
-      protocol,
-      port,
+      path,
     },
   })
 }
 
-export function updateHost(
-  id: number,
-  name: string | undefined,
-  host: string | undefined,
-  protocol: string | undefined,
-  port: number | undefined,
-) {
+export function updateHost(id: number, name: string | undefined, path: string | undefined) {
   return prisma.host.update({
     where: { id },
     data: {
       name,
-      host,
-      protocol,
-      port,
+      path,
     },
   })
 }
