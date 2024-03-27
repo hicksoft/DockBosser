@@ -1,7 +1,7 @@
 import Dockerode from 'dockerode'
 
-export function getDaemon(path: string) {
-  return new Dockerode({ socketPath: path })
+export function getDaemon() {
+  return new Dockerode()
 }
 
 export async function isOnline(daemon: Dockerode) {
@@ -14,28 +14,13 @@ export async function isOnline(daemon: Dockerode) {
 }
 
 export async function getContainers(daemon: Dockerode) {
-  try {
-    const containers = await daemon.listContainers({ all: true })
-    return containers
-  } catch (e) {
-    return []
-  }
+  return await daemon.listContainers({ all: true })
 }
 
 export async function getNetworks(daemon: Dockerode) {
-  try {
-    const networks = await daemon.listNetworks()
-    return networks
-  } catch (e) {
-    return []
-  }
+  return await daemon.listNetworks()
 }
 
 export async function getImages(daemon: Dockerode) {
-  try {
-    const images = await daemon.listImages()
-    return images
-  } catch (e) {
-    return []
-  }
+  return await daemon.listImages()
 }

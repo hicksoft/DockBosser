@@ -14,9 +14,3 @@ model Setting {
   name  String      @unique
   value String
 }
-
-model Daemon {
-  id Int            @id @default(autoincrement())
-  name String       @unique
-  path String
-}

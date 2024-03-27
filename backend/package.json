@@ -45,6 +45,7 @@
     "@prisma/client": "^5.11.0",
     "@types/bcrypt": "^5.0.2",
     "bcrypt": "^5.1.1",
+    "docker-compose": "^0.24.7",
     "dockerode": "^4.0.2",
     "dotenv": "^16.4.1"
   },
