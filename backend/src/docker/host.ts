@@ -42,6 +42,6 @@ export async function createNetwork(host: Dockerode, config: ICreateNetworkConfi
   })
 }
 
-export async function removeNetwork(host: Dockerode, networkId: number) {
-  return host.pruneNetworks({ filters: { label: [`boss_id=${networkId}`] } })
+export async function removeNetwork(host: Dockerode, bossId: number) {
+  return host.pruneNetworks({ filters: { label: [`boss_id=${bossId}`] } })
 }
