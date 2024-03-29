@@ -13,7 +13,6 @@ describe('Docker host', () => {
 
   it('Remove network', async () => {
     const name = generateRandomString(32)
-    console.log(name)
 
     const host = getHost()
     const network = await createNetwork(host, { name, id: 1 })
