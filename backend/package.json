@@ -9,7 +9,9 @@
     "test": "npx jest",
     "test:int": "npx jest --group=integration",
     "test:int:db": "npx jest --group=integration/db",
-    "test:int:docker": "npx jest --group=integration/docker"
+    "test:int:docker": "npx jest --group=integration/docker",
+    "test:svc:network": "npx jest --group=service/network",
+    "test:svc:compose": "npx jest --group=service/compose"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

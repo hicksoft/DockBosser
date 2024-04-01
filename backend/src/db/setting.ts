@@ -3,10 +3,10 @@ import { prisma } from './client'
 
 type SettingName = 'admin_user' | 'admin_pass'
 
-export function getAllSettings() {
+export function getSettings() {
   return prisma.setting.findMany({
     where: {
-      name: { not: 'admin_pass' },
+      AND: [{ name: { not: 'admin_pass' } }, { name: { not: 'boss_id' } }],
     },
   })
 }

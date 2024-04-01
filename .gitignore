@@ -133,3 +133,6 @@ dist
 backend/prisma/migrations/
 backend/prisma/dev.db
 backend/prisma/dev.db-journal
+
+# compose tests
+backend/test/compose/*

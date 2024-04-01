@@ -3,7 +3,7 @@
  */
 
 import { reset } from '../../test/db'
-import { getAllSettings, getSetting, updateSetting } from './setting'
+import { getSettings, getSetting, updateSetting } from './setting'
 
 describe('Setting functions', () => {
   beforeAll(reset)
@@ -17,7 +17,7 @@ describe('Setting functions', () => {
   })
 
   it('Get all settings', async () => {
-    const result = await getAllSettings()
+    const result = await getSettings()
 
     expect(result.map((r) => r.name).sort()).toEqual(['admin_user'].sort())
   })
