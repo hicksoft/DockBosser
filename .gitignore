@@ -136,3 +136,4 @@ backend/prisma/dev.db-journal
 
 # compose tests
 backend/test/compose/*
+!backend/test/compose/test
